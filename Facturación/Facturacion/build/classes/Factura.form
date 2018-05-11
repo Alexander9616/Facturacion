@@ -182,7 +182,7 @@
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="205" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="lblSubtotal" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
@@ -192,7 +192,7 @@
                   <Component id="lblIVA" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="lblTotal" alignment="0" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
@@ -213,8 +213,15 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCliente">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtClienteActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtClienteKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtVendedor">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtVendedorKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnBuscarClie">
       <Properties>
@@ -250,6 +257,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNoFactura">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNoFacturaKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -257,6 +267,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtProducto">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtProductoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnBuscarProd">
       <Properties>
@@ -273,6 +286,9 @@
     <Component class="javax.swing.JTextField" name="txtPrecio">
     </Component>
     <Component class="javax.swing.JTextField" name="txtCantidades">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCantidadesKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnAgregarProd">
       <Properties>

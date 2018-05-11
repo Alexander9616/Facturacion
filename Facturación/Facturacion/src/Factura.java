@@ -104,6 +104,23 @@ public class Factura extends javax.swing.JFrame {
 
         jLabel2.setText("Codigo Vendedor:");
 
+        txtCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtClienteActionPerformed(evt);
+            }
+        });
+        txtCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtClienteKeyTyped(evt);
+            }
+        });
+
+        txtVendedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtVendedorKeyTyped(evt);
+            }
+        });
+
         btnBuscarClie.setText("Buscar");
         btnBuscarClie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,12 +144,30 @@ public class Factura extends javax.swing.JFrame {
 
         jLabel3.setText("NO.factura");
 
+        txtNoFactura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNoFacturaKeyTyped(evt);
+            }
+        });
+
         jLabel4.setText("Codigo De Producto:");
+
+        txtProducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtProductoKeyTyped(evt);
+            }
+        });
 
         btnBuscarProd.setText("Buscar");
         btnBuscarProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarProdActionPerformed(evt);
+            }
+        });
+
+        txtCantidades.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadesKeyTyped(evt);
             }
         });
 
@@ -325,15 +360,15 @@ public class Factura extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(lblSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblSubtotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
                     .addComponent(lblIVA, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(38, Short.MAX_VALUE))
@@ -341,7 +376,7 @@ public class Factura extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void btnBuscarClieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClieActionPerformed
         // TODO add your handling code here:
         String CodClie = txtCliente.getText().toString();
@@ -364,7 +399,7 @@ public class Factura extends javax.swing.JFrame {
                 lblIVA.setText("");
                 lblSubtotal.setText("");
                 lblTotal.setText("");
-                
+                txtCliente.setEnabled(false);
                 
                 
             }
@@ -388,11 +423,14 @@ public class Factura extends javax.swing.JFrame {
                 btnBuscarProd.setEnabled(true);
                 btnBuscarProd.requestFocus();
                 txtProducto.requestFocus();
+                txtVendedor.setEnabled(false);
             }
             
         }
     }//GEN-LAST:event_btnBuscarVenActionPerformed
-
+     
+     
+     
     private void btnBuscarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProdActionPerformed
         // TODO add your handling code here:
         String CodProd = txtProducto.getText().toString();
@@ -548,6 +586,15 @@ public class Factura extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAgregarProdActionPerformed
 
+    void Iniciar()
+     {
+         txtCliente.setEnabled(true);
+         txtVendedor.setEnabled(false);
+         txtProducto.setEnabled(false);
+         txtCantidades.setEnabled(false);
+     }
+    
+    
     private void btnGuardarFacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarFacActionPerformed
         // TODO add your handling code here:
         String CodClie = txtNombreVendedor.getText().toString();
@@ -610,8 +657,7 @@ public class Factura extends javax.swing.JFrame {
                 btnAgregarProd.setEnabled(false);
                 btnBuscarProd.setEnabled(false);
                 txtCantidades.setEnabled(false);
-                
-                
+                Iniciar();
                 
             }
             
@@ -760,6 +806,41 @@ public class Factura extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnBuscarFacActionPerformed
 
+    private void txtClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtClienteActionPerformed
+
+    private void txtClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }//GEN-LAST:event_txtClienteKeyTyped
+
+    private void txtVendedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVendedorKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }//GEN-LAST:event_txtVendedorKeyTyped
+
+    private void txtNoFacturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoFacturaKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }//GEN-LAST:event_txtNoFacturaKeyTyped
+
+    private void txtProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }//GEN-LAST:event_txtProductoKeyTyped
+
+    private void txtCantidadesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadesKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') evt.consume();
+    }//GEN-LAST:event_txtCantidadesKeyTyped
+
+    
     /**
      * @param args the command line arguments
      */

@@ -1,0 +1,47 @@
+drop DATABASE if EXISTS bdFactura;
+CREATE DATABASE bdFactura;
+USE bdFactura;
+create TABLE tblClientes
+(
+	codigo int(8) AUTO_INCREMENT PRIMARY KEY,
+    nombre varchar(50)
+);
+CREATE TABLE tblVendedores
+(
+	codigo int(8) AUTO_INCREMENT PRIMARY KEY,
+    nombre varchar(50)
+);
+CREATE table tblProductos
+(
+	codigo int(8) AUTO_INCREMENT PRIMARY KEY,
+    nombre varchar(50),
+    unidades int,
+    precio double
+);
+create table tblFacturas
+(
+	codigo int(8) AUTO_INCREMENT PRIMARY KEY,
+    codCliente int,
+    FOREIGN key(codCliente) REFERENCES tblClientes(codigo)
+);
+CREATE TABLE tblDetalles
+(
+    codFactura int,
+    codProducto int,
+    FOREIGN key (codFactura) REFERENCES tblFacturas(codigo),
+    FOREIGN key (codProducto) REFERENCES tblProductos(codigo)
+);
+
+INSERT into tblClientes(nombre) VALUES("oscar");
+INSERT into tblClientes(nombre) VALUES("Csar");
+INSERT into tblClientes(nombre)VALUES("Fer");
+INSERT into tblClientes(nombre)VALUES("Diego");
+
+insert INTO tblVendedores(nombre) VALUES("alex");
+insert INTO tblVendedores(nombre) VALUES("Balmore");
+insert INTO tblVendedores(nombre) VALUES("casimiro");
+
+insert into tblProductos(nombre,unidades,precio) VALUES("Iphone X",100,900);
+insert into tblProductos(nombre,unidades,precio) VALUES("Samsung S9",50,1500);
+insert into tblProductos(nombre,unidades,precio) VALUES("Reloj",25,150);
+insert into tblProductos(nombre,unidades,precio) VALUES("Discoduro externo",75,90);

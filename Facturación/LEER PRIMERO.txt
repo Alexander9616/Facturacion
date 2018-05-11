@@ -1,0 +1,32 @@
+Cod Clientes:
+001
+002
+
+Cod Vendedores:
+
+001
+002
+
+CodProductos:
+
+001
+002
+003
+004
+005
+006
+007
+008
+
+				Integrantes:
+
+	- Blanco Abrego, Gabriel Oswaldo	   25-2180-2016
+	- Cordova Guevara, Dennys Francisco	   25-3391-2016
+	- Gomez Carranza, Nelson Enrique	   25-1756-2016
+	- Hernandez Ramos, Fernando Antonio	   25-1510-2016
+	- Hernandez Alberto, Fernando Alfonso	   17-0657-2016
+	- Martinez Galdamez, Anthony Mauricio	   25-0384-2016
+	- Maravilla Prieto, Carlos Manuel	   25-4398-2016
+	- Peña Portillo, Mario Marcelo             25-0391-2016
+	- Ramirez Coreas, Kevin Alexander	   25-0694-2016
+	- Villeda Sanchez, William Ernesto	   25-1998-2016
